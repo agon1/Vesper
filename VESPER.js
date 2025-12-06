@@ -202,7 +202,7 @@ document.querySelectorAll('.menu-link[href^="#"]').forEach(link => {
 })();
 
 // Price (set from a variable so you can change in one place)
-const PRICE_ISK = 19999; // <-- set your price here
+const PRICE_ISK = 19900; // <-- set your price here
 const priceEl = document.getElementById('priceValue');
 if (priceEl){
   priceEl.textContent = PRICE_ISK.toLocaleString('is-IS');
@@ -217,3 +217,4 @@ if (addBtn){
     if (typeof updateCheckoutBtn === 'function') updateCheckoutBtn();
   });
 }
+
