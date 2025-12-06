@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VESPER - Lúxus tímar</title>
+  <meta name="description" content="VESPER — minimal luxury timepieces." />
+  <link rel="stylesheet" href="VESPER.css" />
+</head>
+<body>
+  <!-- Top bar with hamburger -->
+  <header class="topbar">
+    <a class="brand-mini" href="#" aria-label="VESPER Home">
+      <img src="SymbolTr.png" alt="" />
+      <span>VESPER</span>
+    </a>
+
+    <button id="menuBtn"
+            class="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="sideMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <!-- Slide-over menu -->
+  <aside id="sideMenu" class="menu" aria-hidden="true">
+    <nav class="menu-nav" aria-label="Primary">
+      <button id="closeMenu" class="close" aria-label="Close menu">×</button>
+      <a href="#about" class="menu-link">Um VESPER</a>
+      <a href="#contact" class="menu-link">Hafðu samband</a>
+      <a href="#cart" class="menu-link" id="cartLink" aria-label="Cart (0)">
+  <span class="icon-wrap">
+    <svg class="icon icon-cart" viewBox="0 0 24 24" aria-hidden="true" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="20" r="1.6"></circle>
+      <circle cx="18" cy="20" r="1.6"></circle>
+      <path d="M2 3h2l2.6 12.2a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L21 7H6"></path>
+    </svg>
+    <span class="badge" id="cartCount" aria-hidden="true">0</span>
+  </span>
+  <span>Karfa</span>
+</a>
+    </nav>
+    <div class="menu-scrim" id="menuScrim" tabindex="-1"></div>
+  </aside>
+  <main class="splash" role="main">
+    <a class="brand" href="#" aria-label="VESPER Home">
+      <img class="symbol" src="SymbolTr.png" alt="VESPER symbol" />
+      <span class="wordmark">VESPER</span>
+    </a>
+    <button id="buyNow" class="buy" aria-label="Buy VESPER now">VERSLAÐU</button>
+  </main>
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="copy">
+        <h2>Um VESPER</h2>
+        <p>
+          VESPER er lúxus úrmerki sem leggur áherslu á einfaldleika og hágæða efni.
+           Hvert úr er hannað með nákvæmni og smekkvísi, sem gerir það að fullkomnu fylgihlut fyrir þá sem kunna að meta tísku og gæði.
+        </p>
+        <p class="muted">
+          Hannað í Reykjavík, Ísland.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT (place this before the Contact section) -->
+<section id="product" class="section product">
+  <div class="container">
+    <h2>VESPER Watch</h2>
+
+    <!-- Ekki gleyma að vera nav bar "Vörur og upplýsingar um úr"-->
+
+    <!-- Simple, accessible slideshow -->
+    <div class="gallery" aria-label="Product images">
+      <button class="nav prev" aria-label="Previous image">‹</button>
+
+      <div class="slides">
+        <!-- Replace src with your real photos/renders -->
+        <img src="OraReja3.1.jpg" alt="VESPER watch — front"  class="slide is-active">
+        <img src="OraReja2.1.jpg" alt="VESPER watch — side"   class="slide">
+        <img src="OraReja1.jpg" alt="VESPER watch — detail" class="slide">
+        <img src="OraReja4.1.jpg" alt="VESPER watch — side"   class="slide">
+        <img src="OraReja5.1.jpg" alt="VESPER watch — detail" class="slide">
+      </div>
+
+      <button class="nav next" aria-label="Next image">›</button>
+    </div>
+
+    <div class="buy-row">
+      <div class="price">
+        <span id="priceValue">19.900kr</span> ISK
+      </div>
+      <button id="addToCart" class="btn btn-primary" type="button">Bæta við í Körfu</button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+  <div class="container">
+    <h2>Hafðu samband</h2>
+
+    <!-- Status bar (hidden by default) -->
+    <div id="formAlert" class="alert" role="status" aria-live="polite" hidden></div>
+
+    <form id="contactForm"
+          class="form"
+          action="https://formspree.io/f/mrbajokk"
+          method="POST"
+          novalidate>
+      <!-- (Optional) anti-bot honeypot -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" hidden>
+
+      <!-- (Optional) email subject line -->
+      <input type="hidden" name="_subject" value="New message from VESPER site">
+
+      <div class="field">
+        <label for="name">Fullt nafn</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Netfang</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+      </div>
+
+      <div class="field">
+        <label for="message">Skilaboð</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Hvernig getum við að aðstoðað?"></textarea>
+      </div>
+
+      <button class="btn btn-primary" id="contactSubmit" type="submit">Sendu skilaboð</button>
+    </form>
+  </div>
+</section>
+
+    <!-- CART (placeholder for later) -->
+  <section id="cart" class="section">
+    <div class="container">
+      <h2>
+  <svg class="icon icon-cart-heading" viewBox="0 0 24 24" aria-hidden="true" fill="none"
+       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="20" r="1.8"></circle>
+    <circle cx="18" cy="20" r="1.8"></circle>
+    <path d="M2 3h2l2.6 12.2a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L21 7H6"></path>
+  </svg>
+  Karfa
+</h2>
+      <p class="muted" id="cartSummary">Karfan þín er tóm — greiðsla kemur fljótlega.</p>
+      <button id="clearCart" class="btn-secondary" type="button" aria-label="Clear cart">
+      Tæma körfuna
+      <button id="checkoutBtn" class="btn btn-primary" type="button" disabled>Fara í greiðslu</button>
+    </button>
+  </div>
+</section>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <p class="muted">© <span id="year"></span> VESPER. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Basic SEO -->
+<meta name="title" content="VESPER — Minimal Luxury Timepieces">
+<meta name="description" content="Understated watches balancing precision and humility.">
+
+<!-- Social (OG/Twitter) -->
+<meta property="og:title" content="VESPER — Minimal Luxury Timepieces">
+<meta property="og:description" content="Understated watches balancing precision and humility.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <script src="VESPER.js"></script>
+</body>
+</html>
